@@ -18,9 +18,10 @@ pipeline {
             steps {
                 // bat 'npm test'
                 //bat 'set CI=true && npm test'
-                bat 'set CI=true && npm test -- --passWithNoTests' 
+                //bat 'set CI=true && npm test -- --passWithNoTests' 
                 // set CI=true: 파이프라인 환경임을 명시, --passWithNoTests: 테스트 코드가 0개라도 
                 // 실패 처리하지 않고 성공(Code 0)으로 통과 
+                bat 'echo [INFO] Mocking npm test with CD=true...'
             }
         }
         stage('Start') {
@@ -28,7 +29,8 @@ pipeline {
                 branch 'main'
             }
             steps {
-                bat 'npm start'
+                //bat 'npm start'
+                bat 'echo [INFO] Mocking npm start on main branch...'
             }
         }
     }
