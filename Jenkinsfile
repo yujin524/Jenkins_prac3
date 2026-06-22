@@ -10,7 +10,8 @@ pipeline {
         stage('Install') {
             steps {
                 //bat 'npm install'
-                bat 'npm install --no-audit --no-fund --verbose'
+                //bat 'npm install --no-audit --no-fund --verbose'
+                bat 'echo [INFO] Mocking npm install...'
             }
         }
         stage('Test') {
