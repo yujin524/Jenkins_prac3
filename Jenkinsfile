@@ -9,6 +9,8 @@ pipeline {
 
         stage('Install') {
             steps {
+                bat 'if exist node_modules rmdir /s /q node_modules'
+                bat 'if exist package-lock.json del /q package-lock.json
                 bat 'npm install'
             }
         }
